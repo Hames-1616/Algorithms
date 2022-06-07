@@ -15,12 +15,13 @@ int main()
     {
         if(arr[i]==x)
         {
+            cout<<"Element found at place "<<i<<endl;
             arr[i]=-1;
             break;
         }
         else
         {
-            cout<<"Element not found"<<endl;
+            cout<<"Element not found at place "<<i<<endl;
         }
     }
     cout<<endl;
