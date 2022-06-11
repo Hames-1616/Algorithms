@@ -3,9 +3,9 @@ using namespace std;
 int main()
 {
     int n,x;
-    int arr[n];
     cout<<"Enter the number of elements you want to enter"<<endl;
     cin>>n;
+    int arr[n];
     cout<<"enter the elements"<<endl;
     for(int i =0;i<n;i++)
     {
@@ -33,6 +33,6 @@ int main()
     cout<<"printing elements"<<endl;
     for(int i=0;i<n;i++)
     {
-        cout<<arr[i];
+        cout<<arr[i]<<endl;
     }
 }
