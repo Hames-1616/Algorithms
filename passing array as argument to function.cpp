@@ -7,6 +7,13 @@ void disp(int b[],int n)
         cout<<b[i]<<endl;
     }
 }
+void disp(int *ptr,int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        cout<<*(ptr+i)<<endl;
+    }
+}
 int main()
 {
     int x;
