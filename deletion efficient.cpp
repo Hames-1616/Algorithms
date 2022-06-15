@@ -1,38 +1,26 @@
 #include<iostream>
 using namespace std;
+
 int main()
 {
-    int n,x;
-    cout<<"Enter the number of elements you want to enter"<<endl;
-    cin>>n;
-    int arr[n];
-    cout<<"enter the elements"<<endl;
-    for(int i =0;i<n;i++)
+    int a[]={1,2,3,2,4,2,8};
+    int size=7,x=2;
+    int j=0,n=0,b[n];
+    for(int i=0;i<size;i++)
     {
-        cin>>arr[i];
+        if(a[i]!=x)
+        {
+            b[j]=a[i];
+            
+            j++;
+            n++;
+        }
+        
     }
-    cout<<"Enter the element that you want to remove "<<endl;
-    cin>>x;
+    
     for(int i=0;i<n;i++)
     {
-        if(arr[i]==x)
-        {
-            cout<<"element found"<<endl;
-            for(i;i<n;i++)
-            {
-                arr[i]=arr[i+1];
-            }
-            break;
-        }
-        else
-        {
-            cout<<"element not found"<<endl;
-        }
-    }
-    n=n-1;
-    cout<<"printing elements"<<endl;
-    for(int i=0;i<n;i++)
-    {
-        cout<<arr[i]<<endl;
+        
+        cout<<b[i]<<endl;
     }
 }
