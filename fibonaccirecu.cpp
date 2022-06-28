@@ -17,6 +17,10 @@ int main()
     int x;
     cout<<"enter the value of n"<<endl;
     cin>>x;
-    int v=fib(x);
+    cout<<"printing elements"<<endl;
+    for(int i=0;i<x;i++)
+    {
+    int v=fib(i);
     cout<<v<<endl;
-}
+    }
+    }
