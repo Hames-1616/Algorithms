@@ -42,6 +42,20 @@ void palindromestring(string x,string y)
         cout<<"string is not plaindrome"<<endl;
     }
 }
+void substring(string x,string y)
+{
+    for(int i=0;i<x.length();i++)
+    {
+        for(int j=0;j<y.length();j++)
+        {
+            if(x[i]==y[j])
+            {
+                cout<<"substring is found"<<endl;
+               
+            }
+        }
+    }
+}
 int main()
 {
     int i;
@@ -52,4 +66,8 @@ int main()
     lowercasetouppercase(g,i);
    string rev = reversestring(g,i);
    palindromestring(g,rev);
+   cout<<"enter the keyword that you want to find"<<endl;
+   string p;
+   cin>>p;
+   substring(g,p);
 }
