@@ -42,7 +42,6 @@ void palindromestring(string x,string y)
         cout<<"string is not plaindrome"<<endl;
     }
 }
-void findsubstring
 int main()
 {
     int i;
