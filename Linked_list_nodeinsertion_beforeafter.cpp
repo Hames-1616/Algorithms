@@ -60,13 +60,37 @@ void insertafter()
 }
 void insertbefore()
 {
-    struct node *temp,*trav
+    int value;
+    struct node *temp,*trav,*ptr;
+    cout<<"enter the data";
+    temp = (struct node *)malloc(sizeof(struct node));
+    cin>>temp->data;
+    temp->next=NULL;
+    trav=head;
+    cout<<"enter the node before u want to insert"<<endl;
+    cin>>value;
+    while(trav->data!=value)
+    {
+        ptr = trav;
+        trav=trav->next;
+    }
+    if(trav==head)
+    {
+
+    temp->next=trav;
+    head = temp;
+    }
+    else
+    {
+       ptr->next=temp;
+       temp->next=trav;
+    }
 }
 int main(){
     char c;
     while(1)
     {
-        cout<<"enter a for enterng b for inserting at after a node c for viewing d for exit"<<endl;
+        cout<<"enter a for enterng b for inserting at after a node c for inserting before a node d for viewing e for exit"<<endl;
         cin>>c;
         if(c=='a')
         {
