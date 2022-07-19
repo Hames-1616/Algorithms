@@ -60,7 +60,7 @@ void insertafter()
 }
 void insertbefore()
 {
-    
+    struct node *temp,*trav
 }
 int main(){
     char c;
