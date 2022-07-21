@@ -86,11 +86,28 @@ void insertbefore()
        temp->next=trav;
     }
 }
+void deleted()
+{
+    int n;
+    cout<<"enter the element to be deleted"<<endl;
+    cin>>n;
+    struct node *trav,*temp;
+    trav=head;
+    while(trav->next->data!=n)
+    {
+        trav=trav->next;
+    }
+    temp=trav->next;
+    trav->next=trav->next->next;
+    trav->next->next=NULL;
+    free(temp);
+
+}
 int main(){
     char c;
     while(1)
     {
-        cout<<"enter a for enterng b for inserting at after a node c for inserting before a node d for viewing e for exiting"<<endl;
+        cout<<"enter a for enterng /n b for inserting at after a node c for inserting before a node d for viewing e for deleting and f for exiting"<<endl;
         cin>>c;
         if(c=='a')
         {
@@ -110,8 +127,11 @@ int main(){
         }
         if(c=='e')
         {
-           break;
+            deleted();
         }
-    
+        if(c=='f')
+        {
+            break;
+        }
     }
 }
