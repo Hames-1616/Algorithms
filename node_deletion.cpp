@@ -14,7 +14,7 @@ void create()
     for(int i=0;i<n;i++)
     {
         temp=(struct node *)malloc(sizeof(struct node));
-        cout<<"enter the data";
+        cout<<"enter the data "<<endl;
         cin>>temp->data;
         temp->next=NULL;
         if(head==NULL){
@@ -127,7 +127,7 @@ int main(){
     char c;
     while(1)
     {
-        cout<<"enter a for enterng  b for inserting at after a node c for inserting before a node d for viewing e for deleting and f for exiting"<<endl;
+        cout<<"enter"<<endl<<"a for entering data"<<endl<<"b for inserting after a node"<<endl<<"c for inserting before a node "<<endl<<"d for viewing "<<endl<<"e for deleting "<<endl<<"f for exiting"<<endl;
         cin>>c;
         if(c=='a')
         {
