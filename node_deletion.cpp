@@ -93,6 +93,26 @@ void deleted()
     cin>>n;
     struct node *trav,*temp;
     trav=head;
+    if(head->data==n)
+    {
+        head = trav->next;
+        trav->next=NULL;
+        temp=trav;
+        free(temp);
+
+    }
+    else if(tail->data==n)
+    {
+       while(trav->next->data!=n)
+       {
+        trav=trav->next;
+       }
+       temp=trav->next;
+       trav->next=NULL;
+       tail=trav;
+       free(temp);
+    }
+    else{
     while(trav->next->data!=n)
     {
         trav=trav->next;
@@ -101,13 +121,13 @@ void deleted()
     trav->next=trav->next->next;
     trav->next->next=NULL;
     free(temp);
-
+    }
 }
 int main(){
     char c;
     while(1)
     {
-        cout<<"enter a for enterng /n b for inserting at after a node c for inserting before a node d for viewing e for deleting and f for exiting"<<endl;
+        cout<<"enter a for enterng  b for inserting at after a node c for inserting before a node d for viewing e for deleting and f for exiting"<<endl;
         cin>>c;
         if(c=='a')
         {
