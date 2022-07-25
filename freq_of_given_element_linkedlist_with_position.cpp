@@ -33,16 +33,20 @@ void view()
 {
    struct node *trav;
    trav=head;
-   int n,c=0;
+   int n,c=0,z=0;
    cout<<"enter the number get the frequency"<<endl;
    cin>>n;
    while(trav!=NULL)
    {
+    
     if(trav->data==n)
     {
         c++;
+        cout<<"element "<<n<<" is present at position "<<z<<endl;
     }
     trav=trav->next;
+    z++;
+    
    }
    cout<<"The frequency of element "<<n<<" is "<<c<<endl;
 }
