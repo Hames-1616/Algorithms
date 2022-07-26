@@ -2,9 +2,9 @@
 using namespace std;
 struct node 
 {
-    string name;
-    string depart;
-    int rollno,marks;
+    char name[20];
+    char depart[30];
+    int rollno, marks;
     struct node *next; 
 };
 struct node *head=NULL,*tail=NULL;
@@ -25,7 +25,7 @@ void create()
         cout<<"enter the department"<<endl;
         cin>>(temp->depart);
         cout<<"enter the marks obtained"<<endl;
-        cin>>(temp->depart);
+        cin>>(temp->marks);
         temp->next=NULL;
         if(head==NULL){
             head=temp;
