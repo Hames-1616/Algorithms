@@ -45,21 +45,34 @@ void view()
 }
 void insert()
 {
-    struct node *trav;
+    struct node *trav,*temp;
+    temp = (struct node *)malloc(sizeof(struct node));
+    trav=head;
     cout<<"1 for inserting before a node , 2 for inserting after a given node"<<endl;
     int x;
     cin>>x;
     if(x==1)
     {
+        cout<<"enter the data"<<endl;
+        cin>>temp->data;
         int n;
         cout<<"enter the node data before you want to insert"<<endl;
         cin>>n;
         if(head->data==n)
         {
-
+           temp->next=head;
+           head->prev = temp;
+           head = temp;
         }
         else{
-
+            while(trav->data!=n)
+            {
+                trav=trav->next;
+            }
+            temp->prev=trav->prev->next;
+            trav->prev->next=temp;
+            temp->next=trav;
+            trav->prev=temp;
         }
     }
     else if(x==2)
