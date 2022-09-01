@@ -77,14 +77,26 @@ void insert()
     }
     else if(x==2)
     {
+        cout<<"enter the data to be inserted"<<endl;
+        cin>>temp->data;
        cout<<"enter the node data after you want to insert"<<endl;
        int n;
        cin>>n;
        if(tail->data==n)
        {
-
+          tail->next=temp;
+          temp->prev= tail;
+          tail=temp;
        }
        else{
+             while(trav->data!=n)
+             {
+                trav=trav->next;
+             }
+             temp->prev=trav;
+             temp->next=trav->next;
+             trav->next->prev=temp;
+             trav->next=temp;
 
        }
     }
