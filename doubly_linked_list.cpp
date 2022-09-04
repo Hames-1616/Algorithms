@@ -48,7 +48,7 @@ void insert()
     struct node *trav,*temp;
     temp = (struct node *)malloc(sizeof(struct node));
     trav=head;
-    cout<<"1 for inserting before a node , 2 for inserting after a given node"<<endl;
+    cout<<"1 for inserting before a node , 2 for inserting after a given node , 3 for inserting at a particular index"<<endl;
     int x;
     cin>>x;
     if(x==1)
@@ -100,6 +100,32 @@ void insert()
 
        }
     }
+    else if(x==3)
+    {
+        cout<<"enter the position at which you want to insert the element"<<endl;
+        int n;
+        cin>>n;
+        cout<<"enter the data";
+        cin>>temp->data;
+        for(int i=0;i<n;i++)
+        {
+            trav=trav->next;
+        }
+         if(head->data==n)
+        {
+           temp->next=head;
+           head->prev = temp;
+           head = temp;
+        }
+        else{
+            temp->prev=trav->prev->next;
+            trav->prev->next=temp;
+            temp->next=trav;
+            trav->prev=temp;
+        }
+
+
+    }
     else{
         cout<<"wrong input"<<endl;
     }
@@ -110,6 +136,37 @@ void deleted()
     cout<<"enter the node to deleted"<<endl;
     int n;
     cin>>n;
+    trav=head;
+    if(head->data==n)
+    {
+        temp=trav;
+        head=head->next;
+        head->prev=NULL;
+        trav->next=NULL;
+        free(temp);
+    }
+    else if(tail->data==n)
+    {
+        trav=tail;
+        temp=trav;
+        tail=tail->prev;
+        tail->next=NULL;
+        trav->prev=NULL;
+        free(temp);
+
+    }
+    else{
+        while(trav->data!=n)
+        {
+            trav=trav->next;
+        }
+        temp=trav;
+        trav->prev->next=trav->next;
+        trav->next->prev=trav->prev;
+        trav->prev=NULL;
+        trav->next=NULL;
+        free(temp);
+    }
 }
 int main()
 {
