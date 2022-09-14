@@ -6,6 +6,20 @@ struct node {
 };
 
 struct node *root=NULL,*temp,*trav;
+bool prime(int x)
+{
+    int m=x/2;
+    for(int i=2;i<=m;i++)
+    {
+        if(x%i==0)
+        {
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+}
 void create()
 {
     cout<<"enter the values that you want to insert"<<endl;
@@ -62,7 +76,7 @@ void pre_order(struct node *root)
 
     if(root!=NULL)
     {
-        if(root->data % 2 == 0)
+        if(prime(root->data))
         {
         cout<<root->data<<" ";
         }
@@ -78,7 +92,7 @@ void in_order(struct node *root)
     {
         
         in_order(root->left);
-        if(root->data % 2 == 0)
+      if(prime(root->data))
         {
         cout<<root->data<<" ";
         }
@@ -94,7 +108,7 @@ void post_order(struct node *root)
         
         post_order(root->left);
         post_order(root->right);
-        if(root->data % 2 == 0)
+         if(prime(root->data))
         {
         cout<<root->data<<" ";
         }
