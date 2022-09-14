@@ -91,17 +91,104 @@ void post_order(struct node *root)
         cout<<root->data<<" ";
     }
 }
-
+void search()
+{
+    cout<<"enter the element to be searched"<<endl;
+    int n,flag =0 ;
+    cin>>n;
+    trav= root;
+    while(trav!=NULL)
+    {
+        if(trav->data == n)
+        {
+            cout<<"element found"<<endl;
+            flag = 1;
+            break;
+        }
+        else if(n<trav->data)
+        {
+            trav=trav->left;
+        }
+        else if(n>trav->data)
+        {
+            trav= trav->right;
+        }
+    }
+    if(flag == 0 )
+    {
+        cout<<"Element not found"<<endl; 
+    }
+}
+void max()//check copy for seeing sir's method
+{
+    trav=root;
+    while(1)
+    {
+        if(trav->right==NULL)
+        {
+            cout<<trav->data;
+            break;
+        }
+        trav=trav->right;
+    }
+}
+void min()
+{
+    trav=root;
+    while(1){
+    if(trav->left ==NULL)
+    {
+        cout<<trav->data;
+        break;
+    }
+    trav=trav->left;
+}
+}
 int main()
 {
-    create();
 
+    int n;
+    while(1){
+        cout<<"\n1 for creation\n 2 for search\n 3 for preorder\n 4 for inorder\n 5 for postorder\n 6 for finding max \n 7 for finding min\n 0 exit"<<endl;
+    cin>>n;
+    if(n==1)
+    {
+    create();
+    }
+
+    else if(n==2)
+    {
+        search();
+    }
+
+    else if(n==3){
     cout<<endl<<"pre-order traversal"<<endl;
     pre_order(root);
+    }
 
+    else if(n==4){
     cout<<endl<<"In-order traversal"<<endl;
     in_order(root);
+    }
 
+    else if(n==5){
     cout<<endl<<"post-order traversal"<<endl;
     post_order(root);
+    }
+
+    else if(n==6)
+    {
+        max();
+    }
+    else if(n==7)
+    {
+
+        min();
+    }
+    else if(n==0)
+    {
+
+        break;
+    }
+}
 }
